@@ -1,0 +1,170 @@
+// Sprite Mixin
+// ---------------------------------------------
+// 1. Sprite
+// 2. Image Cover
+// 3. CSS3 Transitions
+// 4. Keyframes
+// 5. Breakpoints
+// 6. Utilities
+// 7. General
+
+// Sprite Mixin
+// ---------------------------------------------
+@mixin sprite($img, $x, $y) {
+  background-image: url("$img");
+  background-position: $x $y;
+  background-repeat: no-repeat;
+}
+
+// Image Cover Mixin
+// ---------------------------------------------
+@mixin cover($color, $img) {
+  @if $img {
+    background-image: url($img);
+  }
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color;
+    opacity: 0.75;
+    z-index: 1;
+  }
+}
+
+
+// CSS3 Transitions
+// ---------------------------------------------
+@mixin transition($transition) {
+  -moz-transition:    unquote($transition);
+  -o-transition:      unquote($transition);
+  -webkit-transition: unquote($transition);
+  transition:         unquote($transition);
+}
+@mixin transform($transforms) {
+  -moz-transform: unquote($transforms);
+  -o-transform: unquote($transforms);
+  -ms-transform: unquote($transforms);
+  -webkit-transform: unquote($transforms);
+  transform: unquote($transforms);
+}
+
+
+// Colors
+// ----------------------------------------------
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+
+// Keyframes
+// ----------------------------------------------
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+// Breakpoints
+// ---------------------------------------------
+@mixin bp($name) {
+  $value: map-get($breakpoints, $name);
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  @else {
+    @warn "The '#{$name}' breakpoint is not defined. "
+        + "Please make sure it is defined in the global.scss '$breakpoint' map.";
+  }
+}
+
+
+// Utilities
+// ---------------------------------------------
+::selection {
+	background: #333;
+	color: #E5E5E5;
+}
+::-moz-selection {
+	background: #333;
+	color: #E5E5E5;
+}
+*:focus {
+	outline: none
+}
+.clear:before,
+.clear:after {
+    content: "";
+    display: table;
+}
+.clear:after {
+    clear: both;
+}
+.clear {
+    zoom:1;
+}
+::-webkit-input-placeholder {}
+:-moz-placeholder {}
+input[type=text],
+input[type=submit] {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+// General Mixins
+// ---------------------------------------------
+@mixin clearfix() {
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after{
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+}
+@mixin no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline-style:none;
+}

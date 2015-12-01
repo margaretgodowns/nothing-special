@@ -1,0 +1,77 @@
+/* ---------------------------------------------
+
+LAYOUT
+Define typography and grids here
+
+--------------------------------------------- */
+
+// Master boss things 
+// ---------------------------------------------
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+// Responsive Grid
+// ---------------------------------------------
+$gutter: 2.5%;
+@mixin flexible-width ($col, $cols) {
+  width: (($col / $cols) * 100%) - $gutter;
+}
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.row {	
+  margin-left: -$gutter;
+  *zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+.align-middle:before,
+.align-middle:after {
+  display: none;
+}
+
+[class^="col"] {
+  float: left;
+  min-height: 1px;
+  margin-left: $gutter;
+}
+.col1 { @include flexible-width(1,12); }
+.col2 { @include flexible-width(2,12); }
+.col3 { @include flexible-width(3,12); }
+.col4 { @include flexible-width(4,12); }
+.col5 { @include flexible-width(5,12); }
+.col6 { @include flexible-width(6,12); }
+.col7 { @include flexible-width(7,12); }
+.col8 { @include flexible-width(8,12); }
+.col9 { @include flexible-width(9,12); }
+.col10 { @include flexible-width(10,12); }
+.col11 { @include flexible-width(11,12); }
+.col12 { @include flexible-width(12,12); }
+
+.not-flush {
+  padding: 0 6%;
+}
+.admin-bar {
+  header {
+    top: 32px;
+  }
+}
+
+@include bp(s) {
+  div[class^="col"] {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .inner {
+    padding: 0px 1.5em;
+  }
+}

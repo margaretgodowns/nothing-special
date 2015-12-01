@@ -1,0 +1,30 @@
+/* 
+Theme Name: Fuzzco 2015 Gulp 
+Version: 1.0
+Author: Fuzzco
+Author URI: http://fuzzco.com
+*/
+
+/* ---------------------------------------------
+
+SCSS
+
+Add all scss files here.
+
+Run these commands to watch and complile: 
+// First time:
+$ npm install
+
+// Every time:
+$ gulp
+
+--------------------------------------------- */
+@import '-/scss/global';
+@import '-/scss/normalize';
+@import '-/scss/typography';
+@import '-/scss/layout';
+@import '-/scss/modules';
+@import '-/scss/pages';
+@import '-/scss/zindex';
+@import '-/scss/retina';
+@import '-/scss/responsive';

@@ -1,0 +1,9 @@
+// Breakpoints
+// ---------------------------------------------
+$breakpoints: (
+  xl: (min-width: 1600px),
+  l: (max-width: 1200px),
+  m: (max-width: 880px),
+  s: (max-width: 700px),
+  xs: (max-width: 420px),
+);

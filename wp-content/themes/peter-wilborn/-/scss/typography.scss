@@ -1,0 +1,48 @@
+/* ---------------------------------------------
+
+TYPOGRAPHY
+Include fonts and global type styles here
+
+--------------------------------------------- */
+
+// Fonts
+// ---------------------------------------------
+
+@mixin sans() {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+@mixin sans-bold() {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+@mixin serif() {
+  font-family: "Georgia", serif;
+  font-weight: 700;
+}
+
+// Styles
+// ---------------------------------------------
+
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+p {
+  line-height: 1.4;
+  font-size: 2em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+@mixin font-size-xl() {
+}
+@mixin font-size-l() {
+}
+@mixin font-size-m() {
+}
+@mixin font-size-s() {
+}
+@mixin font-size-xs() {
+}

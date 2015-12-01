@@ -1,0 +1,47 @@
+// Page Name
+// ---------------------------------------------
+// Page Styles
+.header__title {
+	@include federo;
+	color: $primary-color;
+	font-size: 60px;
+	text-align: left;
+	margin-left: 50px;
+}
+
+.header__logo {
+	margin-top: 40px;
+	margin-right: 50px;
+}
+
+#no-left-padding {
+	padding-left: 0;
+}
+
+#border-1 {
+	height: 2px;
+	background-color: $primary-color;
+	max-width: 1021px;
+	margin-left: 12%;
+    width: 77%;
+}
+
+#border-2 {
+	height: 2px;
+	background-color: $primary-color;
+	max-width: 1021px;
+	margin-top: 2px;
+	margin-left: 11%;
+    width: 77%;
+}
+
+.content {
+	margin-top: 150px;	
+}
+
+.content__title {
+	@include federo;
+	color: $primary-color;
+	font-size: 20px;
+	text-transform: uppercase;
+}

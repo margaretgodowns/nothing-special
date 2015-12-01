@@ -1,0 +1,19 @@
+// Fonts
+// ---------------------------------------------
+@mixin franklin {
+  font-weight: 400;
+  font-family: "franklin-gothic-urw", Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin rooney {
+  font-weight: 700;
+  font-family: "rooney-web", Georgia, Times, serif;
+  line-height: 1.25;
+}
+
+@mixin federo {
+	font-weight: 400;
+	font-family: 'Federo', sans-serif;
+}
